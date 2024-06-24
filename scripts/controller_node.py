@@ -7,7 +7,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation as R
 from numpy.linalg import norm
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from lee_controller import calculate_controller_output
+from controller import calculate_controller_output
 
 
 
