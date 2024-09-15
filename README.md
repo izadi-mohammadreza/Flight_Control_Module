@@ -63,8 +63,11 @@ Disable lockstep in PX4
     make px4_sitl boardconfig
 
 Navigate to "Toolchain" and enable "force disable lockstep"
+
 Quit (Q) and save (Y)
+
 Open the gazebo model you will be using for simulation: PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/iris/iris.sdf.
+
 Change enable_lockstep (line 466) from 1 to 0 like so:
 
     <enable_lockstep>0</enable_lockstep>
