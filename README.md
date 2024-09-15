@@ -52,7 +52,7 @@ Follow this link to install [QGroundControl](https://docs.qgroundcontrol.com/mas
 
     mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws/src
-    git clone https://github.com/izadi-mohammadreza/Flight_Control_Module/tree/431cecf3ace8528a90cf29f38ca839addebaead2
+    git clone https://github.com/izadi-mohammadreza/Flight_Control_Module
     git clone https://github.com/PX4/px4_msgs.git
     cd ~/ros2_ws
     colcon build --symlink-install
@@ -76,10 +76,11 @@ Change enable_lockstep (line 466) from 1 to 0 like so:
 
 1- build PX4 for simulation, use:
 
+    cd ~/PX4-Autopilot
     make px4_sitl_default gazebo 
 
 Or
-
+    cd ~/PX4-Autopilot
     make px4_sitl gazebo-classic
 
 2- Start the agent
@@ -91,7 +92,7 @@ Or
     cd ~/ros2_ws/src/Flight_Control_Module/scripts
     python3 controller_node.py
 
-4- Open Qground control software and go on offboard mode
+4- Open the QGroundControl software, arm the drone, and switch to Offboard mode.
 
 5- run python code
 
