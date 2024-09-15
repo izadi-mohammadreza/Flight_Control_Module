@@ -75,6 +75,7 @@ Change enable_lockstep (line 466) from 1 to 0 like so:
 Run the Simulation
 
 build PX4 for simulation, use:
+
     make px4_sitl_default gazebo 
 
 Or
