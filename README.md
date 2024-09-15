@@ -79,9 +79,6 @@ Change enable_lockstep (line 466) from 1 to 0 like so:
     cd ~/PX4-Autopilot
     make px4_sitl_default gazebo 
 
-Or
-    cd ~/PX4-Autopilot
-    make px4_sitl gazebo-classic
 
 2- Start the agent
 
