@@ -30,7 +30,7 @@ Install Python dependencies
 
 Setup [Micro XRCE-DDS Agent & Client](https://docs.px4.io/main/en/middleware/uxrce_dds.html) 
 
-    git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git    ( it can be cloned into your ros workspace )
+    git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git    
     cd Micro-XRCE-DDS-Agent
     mkdir build
     cd build
