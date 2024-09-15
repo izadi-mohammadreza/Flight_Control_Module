@@ -1,6 +1,6 @@
 Install PX4
 
-Clone the PX4 Firmware repository
+Clone the [PX4 Firmware repository] (https://github.com/PX4/PX4-Autopilot)
 
     git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 
@@ -85,7 +85,7 @@ Start the agent
     cd ~/ros2_ws/src/Flight_Control_Module/scripts
     python3 controller_node.py
 
-now open qground control software and go on offboard mode
+Open Qground control software and go on offboard mode
 
     python3 circle_trajectory.py
 
