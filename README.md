@@ -1,4 +1,4 @@
-Install PX4
+**Install PX4
 
 Clone the [PX4 Firmware repository](https://github.com/PX4/PX4-Autopilot)
 
