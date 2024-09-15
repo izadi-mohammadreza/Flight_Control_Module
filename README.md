@@ -58,6 +58,7 @@ ROS 2 setup
     colcon build --symlink-install
 
 Disable lockstep in PX4
+
     cd ~/PX4-Autopilot
     make px4_sitl boardconfig
 
