@@ -8,12 +8,6 @@ Run the PX4 setup script to install the complete toolchain:
     cd PX4-Autopilot
     bash ./Tools/setup/ubuntu.sh
 
-You can build PX4 for different targets. To build PX4 for simulation, use:
-    make px4_sitl_default gazebo 
-
-Or
-
-    make px4_sitl gazebo-classic
 
 To make using PX4 easier, you can add the following lines to your .bashrc file:
 
@@ -46,18 +40,54 @@ Setup Micro XRCE-DDS Agent & Client
     sudo make install
     sudo ldconfig /usr/local/lib/
 
-Start the agent
-    MicroXRCEAgent udp4 -p 8888
 
-Start the simulation
-    cd ~/PX4-Autopilot
-    make px4_sitl_default gazebo 
-Or
-    make px4_sitl gazebo-classic
 
 Install QGroundControl
 
 QGroundControl can be installed/run on Ubuntu LTS 20.04 (and later).
 
 Follow this link to install [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+
+
+ROS 2 setup
+
+    mkdir -p ~/ros2_ws/src
+    cd ~/ros2_ws/src
+    git clone https://github.com/izadi-mohammadreza/Flight_Control_Module/tree/431cecf3ace8528a90cf29f38ca839addebaead2
+    git clone https://github.com/PX4/px4_msgs.git
+    cd ~/ros2_ws
+    colcon build --symlink-install
+
+Disable lockstep in PX4
+    cd ~/PX4-Autopilot
+    make px4_sitl boardconfig
+
+Navigate to "Toolchain" and enable "force disable lockstep"
+Quit (Q) and save (Y)
+Open the gazebo model you will be using for simulation: PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/iris/iris.sdf.
+Change enable_lockstep (line 466) from 1 to 0 like so:
+
+    <enable_lockstep>0</enable_lockstep>
+
+Run the Simulation
+
+build PX4 for simulation, use:
+    make px4_sitl_default gazebo 
+
+Or
+
+    make px4_sitl gazebo-classic
+
+Start the agent
+    MicroXRCEAgent udp4 -p 8888
+
+
+    cd ~/ros2_ws/src/Flight_Control_Module/scripts
+    python3 controller_node.py
+
+now open qground control software and go on offboard mode
+
+    python3 circle_trajectory.py
+
+
 
