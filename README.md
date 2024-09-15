@@ -1,4 +1,4 @@
-**Install PX4
+**Install PX4**
 
 Clone the [PX4 Firmware repository](https://github.com/PX4/PX4-Autopilot)
 
@@ -17,18 +17,18 @@ Don't forget to source your .bashrc after editing:
 
     source ~/.bashrc
 
-ROS2 Installation
+**ROS2 Installation**
 
 Follow this [link](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html) to install ROS2 Foxy or this [link](https://docs.ros.org/en/humble/) to install ROS2 Humble 
 
-Install Python dependencies
+**Install Python dependencies**
 
     pip install --user -U empy pyros-genmsg setuptools
     sudo apt update
     sudo apt install python3-pip
     sudo pip3 install --upgrade pip
 
-Setup [Micro XRCE-DDS Agent & Client](https://docs.px4.io/main/en/middleware/uxrce_dds.html) 
+**Setup [Micro XRCE-DDS Agent & Client](https://docs.px4.io/main/en/middleware/uxrce_dds.html)**
 
     git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git    
     cd Micro-XRCE-DDS-Agent
@@ -41,14 +41,14 @@ Setup [Micro XRCE-DDS Agent & Client](https://docs.px4.io/main/en/middleware/uxr
 
 
 
-Install QGroundControl
+**Install QGroundControl**
 
 QGroundControl can be installed/run on Ubuntu LTS 20.04 (and later).
 
 Follow this link to install [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
 
 
-ROS 2 setup
+**ROS 2 setup**
 
     mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws/src
@@ -57,7 +57,7 @@ ROS 2 setup
     cd ~/ros2_ws
     colcon build --symlink-install
 
-Disable lockstep in PX4
+**Disable lockstep in PX4**
 
     cd ~/PX4-Autopilot
     make px4_sitl boardconfig
@@ -72,9 +72,9 @@ Change enable_lockstep (line 466) from 1 to 0 like so:
 
     <enable_lockstep>0</enable_lockstep>
 
-Run the Simulation
+**Run the Simulation**
 
-build PX4 for simulation, use:
+1- build PX4 for simulation, use:
 
     make px4_sitl_default gazebo 
 
@@ -82,15 +82,20 @@ Or
 
     make px4_sitl gazebo-classic
 
-Start the agent
+2- Start the agent
+
     MicroXRCEAgent udp4 -p 8888
 
+3- run python code
 
     cd ~/ros2_ws/src/Flight_Control_Module/scripts
     python3 controller_node.py
 
-Open Qground control software and go on offboard mode
+4- Open Qground control software and go on offboard mode
 
+5- run python code
+
+    cd ~/ros2_ws/src/Flight_Control_Module/scripts
     python3 circle_trajectory.py
 
 
