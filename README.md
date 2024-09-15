@@ -45,3 +45,19 @@ Setup Micro XRCE-DDS Agent & Client
     make
     sudo make install
     sudo ldconfig /usr/local/lib/
+
+Start the agent
+    MicroXRCEAgent udp4 -p 8888
+
+Start the simulation
+    cd ~/PX4-Autopilot
+    make px4_sitl_default gazebo 
+Or
+    make px4_sitl gazebo-classic
+
+Install QGroundControl
+
+QGroundControl can be installed/run on Ubuntu LTS 20.04 (and later).
+
+Follow this link to install [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html)
+
