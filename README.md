@@ -1,6 +1,6 @@
 Install PX4
 
-Clone the [PX4 Firmware repository] (https://github.com/PX4/PX4-Autopilot)
+Clone the [PX4 Firmware repository](https://github.com/PX4/PX4-Autopilot)
 
     git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 
